@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+  * {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    display: flex;
+   justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin: .5rem;
+  }
+  .title a {
+    text-decoration: none;
+    color: white;
+  }
+  .navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-links li {
+    list-style: none;
+  }
+
+  .navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+  }
+  .content {
+            width: 40%;
+            height: 400px;
+            position: relative;
+            margin: 10% auto;
+            background: rgb(250, 249, 249);
+            border-radius: 5pt
+           
+
+ </style>
+</head>
+
+  <body style="background: linear-gradient(to right, #a710ff,#06ffa0);">
+    <header>
+        <nav class="navbar">
+            <div class="title"><a href="#" title="Home">My Fitness</a></div>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="bmi_calculator">BMI Calculator</a></li>
+                        <li><a href="#">My Health</a></li>
+                        <li><a href="#">My Workouts</a></li>
+                        
+                        {% if user.is_authenticated %}
+                        <li><a href="/members/logout_user">Logout</a></li>
+                        {% else %}
+                        <li><a href="/members/register_user">Register</a></li>
+                        <li><a href="/members/login_user">Login</a></li>
+                        {% endif %}
+                        {% if user.is_superuser %}
+                        <li><a href="/admin">Adminstration</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+        </nav>
+
+        
+       
+    </header>
+        <div class="content">
+
+        </div>
+    </body>
+</html>
