@@ -9,6 +9,7 @@ from members.forms import RegisterUserForm
 from members.models import Account
 from .forms import RegisterUserForm
 from django.contrib.auth.models import User
+from utils import update_user_fields
 
 import myFitness
 
@@ -35,15 +36,7 @@ def register_user(request):
         form = RegisterUserForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            feet = form.cleaned_data['feet']
-            inches = form.cleaned_data['inches']
-            u = Account.objects.get(username = username)
-            u.height = feet + "'" + inches
-            u.save(update_fields=['height'])
-            user = authenticate(username=username, password=password)
-            login(request, user)
+            update_user_fields(request,form)
             messages.success(request, 'Registration sucessfull.')
             return redirect('/myFitness/')
     else:
