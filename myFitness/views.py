@@ -21,4 +21,6 @@ def gallery(request):
     return render(request, template_path,context)
 
 def bmi_calculator(request):
+    User.get
+    user = Account.objects.get(username = username)
     return render(request,'myFitness/bmi.html')

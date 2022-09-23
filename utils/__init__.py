@@ -7,7 +7,7 @@ from members.forms import RegisterUserForm
 from members.models import Account
 from django.contrib.auth.models import User
 
-
+#This function is used in the "register_user" view to update the users fields using the user creation form
 def update_user_fields(request,form):
     username = form.cleaned_data['username']
     password = form.cleaned_data['password1']

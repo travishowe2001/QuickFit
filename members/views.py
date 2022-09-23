@@ -14,7 +14,6 @@ from utils import update_user_fields
 import myFitness
 
 
-
 # Create your views here.
 def login_user(request):
     if request.method =="POST":

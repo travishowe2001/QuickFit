@@ -7,5 +7,9 @@ class Health_Data(models.Model):
     weight = models.IntegerField()
     height = models.IntegerField()
     age = models.IntegerField()
-
     
+
+class users(models.Model):
+    """Users"""
+    name = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
