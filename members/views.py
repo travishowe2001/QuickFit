@@ -47,3 +47,5 @@ def logout_user(request):
     messages.success(request, ("You Were Logged Out"))
     return redirect('/quickFit/')
 
+def profile(request):
+    return render(request, "members/profile.html")

@@ -28,9 +28,10 @@ def user_health(request):
         weight = int(request.user.weight)
         bmi = bmi_calc(height_in_inches,weight)
         context = {'height': height, 'weight': weight, 'bmi':bmi}
-        return render(request, "myfitness/health.html", context)
+        return render(request, "quickfit/health.html", context)
     else:
         return redirect("/members/login_user")
+
 
 def about(request):
     return render(request, "quickfit/about.html")
