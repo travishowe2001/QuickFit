@@ -11,7 +11,7 @@ from .forms import RegisterUserForm
 from django.contrib.auth.models import User
 from utils import update_user_fields
 
-import myFitness
+import quickFit
 
 
 # Create your views here.
@@ -23,7 +23,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
 
-            return redirect('/myFitness/')
+            return redirect('/quickFit/')
         else:
             return redirect('/members/login_user')
             
@@ -37,7 +37,7 @@ def register_user(request):
             form.save()
             update_user_fields(request,form)
             messages.success(request, 'Registration sucessfull.')
-            return redirect('/myFitness/')
+            return redirect('/quickFit/')
     else:
         form = RegisterUserForm()
     return render(request, 'members/register_user.html', {'form':form,})
@@ -45,5 +45,5 @@ def register_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request, ("You Were Logged Out"))
-    return redirect('/myFitness/')
+    return redirect('/quickFit/')
 

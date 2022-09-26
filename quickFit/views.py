@@ -8,10 +8,10 @@ from utils import get_height, bmi_calc
 
 # Create your views here.
 def home(request):
-    return render(request,'myFitness/home.html')
+    return render(request,'quickFit/home.html')
 
 def gallery(request):
-    template_path = "myFitness/home.html"
+    template_path = "quickFit/home.html"
     
     context = {
         "images" : [
@@ -31,4 +31,7 @@ def user_health(request):
         return render(request, "myfitness/health.html", context)
     else:
         return redirect("/members/login_user")
+
+def about(request):
+    return render(request, "quickfit/about.html")
     

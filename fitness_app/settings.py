@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
      #myapps
-    'myFitness',
+    'quickFit',
     'members',
 
     #Defaults

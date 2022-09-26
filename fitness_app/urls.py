@@ -18,16 +18,16 @@ from sys import path_hooks
 from django.contrib import admin
 from django.urls import include, path
 
-import myFitness
+import quickFit
 
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myFitness.urls')),
+    path('', include('quickFit.urls')),
     path('members/', include('members.urls')),
     path('members/', include('django.contrib.auth.urls')),
-    path('myFitness/', include('myFitness.urls')),
+    path('quickFit/', include('quickFit.urls')),
  
 ]
