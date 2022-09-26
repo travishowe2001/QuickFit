@@ -2,8 +2,9 @@
 from http.client import HTTPResponse
 import string
 from django.template import loader
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from members.models import Account
+from utils import get_height, bmi_calc
 
 # Create your views here.
 def home(request):
@@ -20,7 +21,14 @@ def gallery(request):
 
     return render(request, template_path,context)
 
-def bmi_calculator(request):
-    User.get
-    user = Account.objects.get(username = username)
-    return render(request,'myFitness/bmi.html')
+def user_health(request):
+    if request.user.is_authenticated:
+        height = get_height( int(request.user.height_in_inches))
+        height_in_inches = int(request.user.height_in_inches)
+        weight = int(request.user.weight)
+        bmi = bmi_calc(height_in_inches,weight)
+        context = {'height': height, 'weight': weight, 'bmi':bmi}
+        return render(request, "myfitness/health.html", context)
+    else:
+        return redirect("/members/login_user")
+    

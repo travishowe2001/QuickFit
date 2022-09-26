@@ -3,17 +3,17 @@
         <head>
             <style>
         .formbox{
-            width: 600px;
+            max-width: 100%;
             height: 480px;
             position: relative;
-            margin: 5% auto;
+            margin: 0% auto;
             background: white;
-            border-radius: 4%;
+            
         }
         h2 {
             text-align: center;
             font-family: sans-serif;
-            padding-top: 10%;
+            padding-top: 1%;
         }
        .button-box{
             
@@ -27,7 +27,7 @@
         .input-group{
             top: 180px;
             position: absolute;
-            width: 280px;
+            width:fit-content;
             transition: .5s;
             
         }
@@ -63,7 +63,9 @@
            <h2>Register</h2>
         <form action="register_user" method="post" class="input-group">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div style=>
+                {{ form.as_ul}}
+                
 
            
             <button type="submit" class="login-btn">Register</button>

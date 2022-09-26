@@ -8,6 +8,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('home', views.home, name='home'),
     path("gallery", views.gallery, name="gallery"),
-    path('bmi_calculator', views.bmi_calculator, name='bmi_calculator')
+    path("user_health", views.user_health, name='user_health')
 
 ]

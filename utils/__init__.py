@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from members.forms import RegisterUserForm
 from members.models import Account
 from django.contrib.auth.models import User
+from math import floor
 
 #This function is used in the "register_user" view to update the users fields using the user creation form
 def update_user_fields(request,form):
@@ -19,3 +20,16 @@ def update_user_fields(request,form):
     u.save(update_fields=['height','height_in_inches'])
     user = authenticate(username=username, password=password)
     login(request, user)
+
+
+
+
+def get_height(inches):
+    feet = floor(inches / 12)
+    inches = inches - (feet * 12 )
+    return( str(feet) + "'" + str(inches))
+
+def bmi_calc(height,weight):
+    bmi = 703 * (int(weight) / int(height)**2)
+    return(round(int(bmi),5))
+    
