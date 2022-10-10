@@ -1,60 +1,13 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    
- <style>
+<head> 
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-  * {
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-  }
+  </style>
 
-  .navbar {
-    display: flex;
-   justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-  }
-  .title {
-    font-size: 1.5rem;
-    margin: .5rem;
-  }
-  .title a {
-    text-decoration: none;
-    color: white;
-  }
-  .navbar-links ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .navbar-links li {
-    list-style: none;
-  }
-
-  .navbar-links li a {
-    text-decoration: none;
-    color: white;
-    padding: 1rem;
-    display: block;
-  }
-  .content {
-            width: 40%;
-            height: 400px;
-            position: relative;
-            margin: 10% auto;
-            background: rgb(250, 249, 249);
-            border-radius: 5pt
-           
-
- </style>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+  
 </head>
 
   <body style="background: linear-gradient(to right, #a710ff,#06ffa0);">
