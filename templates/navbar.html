@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="title"><a href="home" title="Home">Quick Fit</a></div>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="user_health">My Health</a></li>
+                <li><a href="#">My Workouts</a></li>
+                
+                {% if user.is_authenticated %}
+                    <li><a href="/members/profile">Profile</a></li>
+                    <li><a href="/members/logout_user">Logout</a></li>
+                {% else %}
+                    <li><a href="/members/register_user">Register</a></li>
+                    <li><a href="/members/login_user">Login</a></li>
+                {% endif %}
+                
+                {% if user.is_superuser %}
+                    <li><a href="/admin">Adminstration</a></li>
+                {% endif %}
+            </ul>
+        </div>
+</nav>

@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    
- <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-  * {
+* {
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
   }
@@ -15,7 +9,7 @@
 
   .navbar {
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
     background-color: #333;
     color: white;
@@ -29,7 +23,7 @@
     color: white;
   }
   .navbar-links ul {
-    margin: 0;
+    margin: 20px;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -51,18 +45,5 @@
             position: relative;
             margin: 10% auto;
             background: rgb(250, 249, 249);
-            border-radius: 5pt
-           
-
- </style>
-</head>
-
-  <body style="background: linear-gradient(to right, #a710ff,#06ffa0);">
-    <header>
-      {% include "navbar.html" %}
-    </header>
-        <div class="content">
-            About
-        </div>
-    </body>
-</html>
+            border-radius: 5pt;
+  }
