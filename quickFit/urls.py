@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-import quickFit
+import fitness_app
 
 app_name = 'quickFit'
 
