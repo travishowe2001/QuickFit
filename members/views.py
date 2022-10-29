@@ -49,3 +49,25 @@ def logout_user(request):
 
 def profile(request):
     return render(request, "members/profile.html")
+
+
+def change_password(request):
+    if request.method == "POST":
+        current_password = request.POST["current_password"]
+        new_password = request.POST["new_password"]
+        confirm = request.POST["confirm_password"]
+        
+        if confirm == new_password:
+            user_id = request.user.id
+            user = Account.objects.get(id=user_id)
+            user.set_password(new_password)
+            user.save()
+            return redirect('/members/success')
+        else:
+            return redirect('/quickfit/')
+
+    else:
+        return render(request, "members/change_password.html")
+        
+def success(request):
+    return render(request, 'members/success.html')
